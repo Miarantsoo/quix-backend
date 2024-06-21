@@ -9,4 +9,7 @@ import org.springframework.data.repository.query.Param;
 public interface UtilisateurRepository extends JpaRepository<Utilisateur, Long> {
     @Query("SELECT u FROM Utilisateur u WHERE u.email = :email AND u.mdp = :mdp")
     Optional<Utilisateur> findByEmailAndMdp(@Param("email") String email, @Param("mdp") String mdp);
+
+    @Query("SELECT u FROM Utilisateur u WHERE u.idUtilisateur = :idUtilisateur")
+    Optional<Utilisateur> findByIdUtilisateur(@Param("idUtilisateur") Long idUtilisateur);
 }

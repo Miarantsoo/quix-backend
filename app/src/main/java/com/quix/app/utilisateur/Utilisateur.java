@@ -11,7 +11,15 @@ import com.quix.app.centre.Centre;
 public class Utilisateur {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @SequenceGenerator(
+        name = "utilisateur_sequence",
+        sequenceName = "utilisateur_sequence",
+        allocationSize = 1
+    )
+    @GeneratedValue(
+        strategy = GenerationType.SEQUENCE,
+        generator = "utilisateur_sequence"
+    )
     @Column(name = "idUtilisateur")
     private Long idUtilisateur;
 

@@ -8,7 +8,15 @@ import com.quix.app.utilisateur.Utilisateur;
 public class MiseAJour {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @SequenceGenerator(
+        name = "miseAJour_sequence",
+        sequenceName = "miseAJour_sequence",
+        allocationSize = 1
+    )
+    @GeneratedValue(
+        strategy = GenerationType.SEQUENCE,
+        generator = "miseAJour_sequence"
+    )
     @Column(name = "id_mise_a_jour")
     private Long idMisAJour;
 

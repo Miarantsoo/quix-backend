@@ -20,4 +20,9 @@ public class UtilisateurService {
         Optional<Utilisateur> utilisateur = utilisateurRepository.findByEmailAndMdp(email, mdp);
         return utilisateur;
     }
+
+    public Optional<Utilisateur> findByIdUtilisateur(Long idUtilisateur){
+        Optional<Utilisateur> utilisateur = utilisateurRepository.findByIdUtilisateur(idUtilisateur);
+        return utilisateur;
+    }
 }

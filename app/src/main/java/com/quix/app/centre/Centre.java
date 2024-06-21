@@ -7,7 +7,15 @@ import jakarta.persistence.*;
 public class Centre {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @SequenceGenerator(
+        name = "centre_sequence",
+        sequenceName = "centre_sequence",
+        allocationSize = 1
+    )
+    @GeneratedValue(
+        strategy = GenerationType.SEQUENCE,
+        generator = "centre_sequence"
+    )
     @Column(name = "idCentre")
     private Long idCentre;
 
