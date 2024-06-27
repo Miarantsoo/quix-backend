@@ -1,13 +1,12 @@
 package com.project.quix.client;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import com.project.quix.tierces.TypeClient;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@RequestMapping("/api/clients")
 public class ClientController {
 
     private final ClientService servClient;
@@ -16,12 +15,14 @@ public class ClientController {
         this.servClient = servClient;
     }
 
-    @GetMapping("/get-all-client")
-    public List<Client> getClientByType(@RequestParam("typeClient") int type){
-        return servClient.getAllClientbyType(type);
+    @PostMapping("/get-all-client")
+    @ResponseBody
+    public List<Client> getClientByType(@RequestBody TypeClient type){
+        return servClient.getAllClientbyType(type.getTypeClient());
     }
 
     @PostMapping("/search-client")
+    @ResponseBody
     public List<Client> searchClientByName(@RequestParam("typeClient") int type, @RequestParam("recherche") String recherche){
         return servClient.getClientByName(type, recherche);
     }

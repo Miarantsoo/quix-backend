@@ -1,0 +1,2 @@
+INSERT INTO utilisateur(id_utilisateur, nom, prenom, date_naissance, adresse, email, mdp, id_centre, id_role)
+VALUES(nextval('utilisateur_sequence'), 'admin', 'admin', '2024-06-22', 'Rue Dr Zamenhof Behoririka', 'admin@admin.com', 'admin', 1, 5);

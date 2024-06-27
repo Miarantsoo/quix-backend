@@ -1,0 +1,13 @@
+INSERT INTO role VALUES(nextval('role_sequence'), 'Super Administrateur');
+INSERT INTO role VALUES(nextval('role_sequence'), 'Agent d''accueil');
+INSERT INTO role VALUES(nextval('role_sequence'), 'Ressources humaines');
+INSERT INTO role VALUES(nextval('role_sequence'), 'Medecin generaliste');
+INSERT INTO role VALUES(nextval('role_sequence'), 'Radiologue');
+INSERT INTO role VALUES(nextval('role_sequence'), 'Cardiologue');
+INSERT INTO role VALUES(nextval('role_sequence'), 'Neurologue');
+INSERT INTO role VALUES(nextval('role_sequence'), 'Ophtalmologue');
+INSERT INTO role VALUES(nextval('role_sequence'), 'Medecin ORL');
+INSERT INTO role VALUES(nextval('role_sequence'), 'Gynecologue');
+INSERT INTO role VALUES(nextval('role_sequence'), 'Pediatre');
+INSERT INTO role VALUES(nextval('role_sequence'), 'Allergologue');
+INSERT INTO role VALUES(nextval('role_sequence'), 'Dermatologue');

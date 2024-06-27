@@ -3,7 +3,7 @@ package com.project.quix.client;
 import com.project.quix.parrainage.Parrainage;
 import jakarta.persistence.*;
 
-import java.time.LocalDate;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -50,9 +50,10 @@ public class Client {
 
     @Column(
             name = "date_naissance",
-            nullable = false
+            nullable = false,
+            columnDefinition = "date"
     )
-    private LocalDate dateNaissance;
+    private Date dateNaissance;
 
     @Column(
             name = "lieu_naissance",
@@ -66,9 +67,10 @@ public class Client {
     private Long CIN;
 
     @Column(
-            name = "date_cin"
+            name = "date_cin",
+            columnDefinition = "date"
     )
-    private LocalDate dateCIN;
+    private Date dateCIN;
 
     @Column(
             name = "lieu_cin"
@@ -117,7 +119,7 @@ public class Client {
 
     public Client() {}
 
-    public Client(Long numeroMatricule, String nom, String prenom, int sexe, String adresse, LocalDate dateNaissance, String lieuNaissance, Long CIN, LocalDate dateCIN, String lieuCIN, String email, String numeroTelephone, String profession, String societe, Client parrain, Parrainage typeParrainage, int typeClient) {
+    public Client(Long numeroMatricule, String nom, String prenom, int sexe, String adresse, Date dateNaissance, String lieuNaissance, Long CIN, Date dateCIN, String lieuCIN, String email, String numeroTelephone, String profession, String societe, Client parrain, Parrainage typeParrainage, int typeClient) {
         this.numeroMatricule = numeroMatricule;
         this.nom = nom;
         this.prenom = prenom;
@@ -137,7 +139,7 @@ public class Client {
         this.typeClient = typeClient;
     }
 
-    public Client(String nom, String prenom, int sexe, String adresse, LocalDate dateNaissance, String lieuNaissance, Long CIN, LocalDate dateCIN, String lieuCIN, String email, String numeroTelephone, String profession, String societe, Client parrain, Set<Client> parrainees, Parrainage typeParrainage, int typeClient) {
+    public Client(String nom, String prenom, int sexe, String adresse, Date dateNaissance, String lieuNaissance, Long CIN, Date dateCIN, String lieuCIN, String email, String numeroTelephone, String profession, String societe, Client parrain, Set<Client> parrainees, Parrainage typeParrainage, int typeClient) {
         this.nom = nom;
         this.prenom = prenom;
         this.sexe = sexe;
@@ -197,11 +199,11 @@ public class Client {
         this.adresse = adresse;
     }
 
-    public LocalDate getDateNaissance() {
+    public Date getDateNaissance() {
         return dateNaissance;
     }
 
-    public void setDateNaissance(LocalDate dateNaissance) {
+    public void setDateNaissance(Date dateNaissance) {
         this.dateNaissance = dateNaissance;
     }
 
@@ -221,11 +223,11 @@ public class Client {
         this.CIN = CIN;
     }
 
-    public LocalDate getDateCIN() {
+    public Date getDateCIN() {
         return dateCIN;
     }
 
-    public void setDateCIN(LocalDate dateCIN) {
+    public void setDateCIN(Date dateCIN) {
         this.dateCIN = dateCIN;
     }
 
