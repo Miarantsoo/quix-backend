@@ -6,6 +6,8 @@ import com.project.quix.utilisateur.Utilisateur;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity(name = "rdv")
@@ -36,7 +38,7 @@ public class RendezVous {
             nullable = false,
             columnDefinition = "timestamp"
     )
-    private Date dateRendezVous;
+    private LocalDateTime dateRendezVous;
 
     @ManyToOne
     @JoinColumn(name = "id_medecin")
@@ -49,7 +51,7 @@ public class RendezVous {
     public RendezVous() {
     }
 
-    public RendezVous(Long idRendezVous, Client idPatient, Date dateRendezVous, Utilisateur idMedecin, Role role) {
+    public RendezVous(Long idRendezVous, Client idPatient, LocalDateTime dateRendezVous, Utilisateur idMedecin, Role role) {
         this.idRendezVous = idRendezVous;
         this.idPatient = idPatient;
         this.dateRendezVous = dateRendezVous;
@@ -73,11 +75,11 @@ public class RendezVous {
         this.idPatient = idPatient;
     }
 
-    public Date getDateRendezVous() {
+    public LocalDateTime getDateRendezVous() {
         return dateRendezVous;
     }
 
-    public void setDateRendezVous(Date dateRendezVous) {
+    public void setDateRendezVous(LocalDateTime dateRendezVous) {
         this.dateRendezVous = dateRendezVous;
     }
 
